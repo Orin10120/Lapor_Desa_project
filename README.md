@@ -1,61 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Lapor Desa
 
-## About Laravel
+Aplikasi web Lapor Desa adalah platform yang direka untuk memudahkan pelaporan masalah atau aduan oleh warga desa kepada kerajaan desa tempatan. Dengan aplikasi ini, warga dapat dengan mudah menyampaikan keluhan, cadangan, atau maklumat penting lain yang kemudiannya boleh ditindaklanjuti oleh pihak berkuasa desa.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Ciri-Ciri Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Berikut adalah beberapa fitur utama yang ditawarkan oleh aplikasi Lapor Desa:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Pelaporan Aduan: Warga dapat membuat laporan baharu dengan mudah, melampirkan butiran seperti jenis aduan, lokasi, penerangan, dan bukti gambar.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Pemantauan Status Laporan: Pengguna boleh memantau status terkini laporan mereka secara real-time (contohnya, "Menunggu Pengesahan", "Dalam Proses", "Selesai", "Ditolak").
 
-## Laravel Sponsors
+- Pengurusan Aduan (Admin Desa): Admin desa mempunyai akses untuk melihat, mengesahkan, mengurus, dan mengambil tindakan ke atas semua laporan yang diterima.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Notifikasi Interaktif: Sistem notifikasi akan memberitahu pengguna tentang kemas kini status laporan mereka.
 
-### Premium Partners
+- Sistem Pengesahan Pengguna: Pengguna dapat mendaftar dan log masuk sebagai warga atau admin desa untuk mengakses fitur yang relevan.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+## Teknologi yang Digunakan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Backend Framework: Laravel (PHP Framework)
+- Database: PostgreSQL
+- Frontend: Blade Laravel (Untuk tampilan dasar)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Installation
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Ikuti langkah-langkah di bawah untuk memasang dan menjalankan aplikasi Lapor Desa secara tempatan:
 
-## License
+1. Klon Repositori:
+```bash
+git clone https://github.com/Orin10120/Lapor_Desa_project.git
+cd lapor-desa
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. Pasang Composer:
+```bash
+composer install
+```
+
+3. Buat File ```.env ```:
+Salin file konfigurasi contoh ```.env.example``` menjadi ```.env ```:
+```bash
+cp .env.example .env
+```
+
+4. Konfigurasi database:
+Buka fail ```.env ``` dan sesuaikan tetapan database PostgreSQL anda:
+menjadi ```.env ```:
+```bash
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=nama_database_anda # Ganti dengan nama database PostgreSQL Anda
+DB_USERNAME=username_anda     # Ganti dengan username PostgreSQL Anda
+DB_PASSWORD=password_anda     # Ganti dengan password PostgreSQL Anda
+```
+
+5. Jalankan key generate
+Ini akan menghasilkan kunci unik untuk aplikasi Laravel Anda:
+```bash
+php artisan key:generate
+```
+
+6. Jalankan Migrate
+Perintah ini akan membuat tabel-tabel yang diperlukan di database Anda berdasarkan migrasi Laravel:
+```bash
+php artisan migrate
+```
+
+7. Jalankan Seeder (Opsional):
+Jika Anda memiliki data awal atau data dummy yang ingin dimuat ke database, jalankan seeder:
+```bash
+php artisan db:seed
+```
+
+8. Jalankan Storage
+jalankan perintah ini untuk membuat symlink ke folder penyimpanan publik:
+```bash
+php artisan storage:link
+```
+
+9. Jalankan aplikasi
+```bash
+php artisan serve
+```
+Aplikasi Lapor Desa kini tersedia di ```http://127.0.0.1:8000 ```.
+
+    
+## ERD Diagram
+Berikut adalah representasi ERD untuk aplikasi Lapor Desa. Dokumen Diagram ini menunjukkan entiti-entiti utama dan hubungan antara mereka dalam pangkalan data.
+
+[ERD Diagram](https://drive.google.com/file/d/16vmwMigzxyvQsNY6TXptKrjbNmUoRoJ5/view?usp=sharing)
+

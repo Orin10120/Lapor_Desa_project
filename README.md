@@ -51,7 +51,7 @@ cp .env.example .env
 ```
 
 4. Konfigurasi database:
-Buka fail ```.env ``` dan sesuaikan tetapan database PostgreSQL anda:
+Buka file ```.env ``` dan sesuaikan tetapan database PostgreSQL anda:
 menjadi ```.env ```:
 ```bash
 DB_CONNECTION=pgsql
